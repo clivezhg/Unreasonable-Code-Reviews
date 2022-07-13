@@ -19,6 +19,7 @@ The following are some key review points.
 			add_post_meta( $object_id, $loc_meta_key, $_POST[$val_name] );
 ```
 > The reviewer said '$_POST[$val_name]' (which is a post_meta translation) must be sanitized.
+
 However, in the Wordpress Core when saving post_meta, it doesn't do any sanitizing: https://github.com/WordPress/WordPress/blob/2cc9f735238212adb0bba7888e11eccb4bf91bc2/wp-admin/includes/ajax-actions.php#L1627-L1649
 <br>As said before, More-Lang is making multilingual equivalents of Wordpress Core, they must be the same formats. So any extra sanitizing than Wordpress Core is useless here, which may even break the business logic in some cases.
 <br>(And like other More-Lang translations, More-Lang replace the Core post_meta value with the translated one after fetched from the DB using Wordpress filters ASAP, so it shall not introduce extra issue to Wordpress. I.e., the security is in the same level as Wordpress Core)
@@ -29,6 +30,7 @@ However, in the Wordpress Core when saving post_meta, it doesn't do any sanitizi
 			$ml_requested_url_locale = trim( $_GET['lang'] );
 ```
 > The reviewer said '$ml_requested_url_locale' must be sanitized.
+
 Actually, in More-Lang, the '$ml_requested_url_locale' will be used to match a known set (e.g., it can only be "en" or "jp"), if it is not in the set, then "" will be assigned to '$ml_requested_url_locale'. This process is already a perfect sanitizing. Any extra sanitizing is nonsense, hard to understand, and will reduce the performance.
 <br>The matching & assigning process is here: https://github.com/clivezhg/more-lang/blob/dfbe046a6136965e1ffa85ecb3ad63079b6eedde/inc/ml_pub.php#L221-L229
 
@@ -38,6 +40,7 @@ Actually, in More-Lang, the '$ml_requested_url_locale' will be used to match a k
 	<textarea id="content_<?php echo $mlocale; ?>" name="content_<?php echo $mlocale; ?>" class="ml-local-ta" style="display:none;"><?php
 ```
 > The reviewer required "escape every variable" when 'echo'.
+
 Firstly, in general sense, this guideline is incorrect. Because there's a very common coding pattern: store the html in a variable, change it, at last echo it, then 'esc...' will produce incorrect string.
 <br>Secondly, there are many escaped 'echo's in More-Lang, and all unescaped are proved to be safe (i.e., their data sources are under controlled), to add 'esc...' to these safe 'echo's is useless and causing pefromance issue.
 <br>Lastly, I inspected around 10 popular plugins, none of them does "escape every variable". Then I inspected Wordpress Core, it even does much worse than More-Lang, it doesn't 'esc...' some uncontrolled data.
