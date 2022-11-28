@@ -49,6 +49,6 @@ Firstly, in general sense, this guideline is problematic. Because there's a very
 <br>So, this guideline looks a little unrealistic (too awkward for most developers to implement), the reviewer was giving very very unfair task to More-Lang...but of course, the reviewer denied (without any reasonable explanation).
 
 
-That's how More-Lan was closed. And as far as my inspection, regarding the review points, More-Lang is safer than Wordpress Core & most of the hosted plugins (which also widely violate the review team's "guidelines"), the reviewer closed it mainly because he/she desired to do, weaving variety of unreasonable reasons (otherwise most of the hosted plugins should be closed).
+That's how More-Lan was closed. And as far as my inspection, regarding the review points, More-Lang is safer than Wordpress Core & most of the hosted plugins (which also widely violate the review team's "guidelines"), It looked that the reviewer closed it mainly because he/she desired to do, weaving variety of unreasonable reasons (otherwise most of the hosted plugins should be closed).
 
 If you would like to comment this document or share your story, you can create issues in this project.
