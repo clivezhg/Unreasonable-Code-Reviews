@@ -13,6 +13,7 @@ So, the reviews were unreasonable to me, the plugin was closed at last.
 <br>So, either the last review is unreasonable, or the first review is unreasonable, as a whole the review team is untrustworthy & unpredictable.)
 
 The following will explain some details.
+
 Firt of all, most of the review points are protected by the Wordpress authority, which protect them from unauthorized visit: 
 https://github.com/clivezhg/more-lang/blob/dfbe046a6136965e1ffa85ecb3ad63079b6eedde/more-lang.php#L82-L85
 
