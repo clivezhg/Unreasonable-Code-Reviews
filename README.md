@@ -12,6 +12,9 @@ So, the reviews were unreasonable to me, the plugin was closed at last.
 <br>And, nearly all the points of the last reviewer also existed in the Wordpress core, but one of the reviewer's theories is like "something can be done by Wordpress core, but cannot be done by you". However, because More-Lang is a multilingual plugin, it will make multilingual equivalents of Wordpress core, so the reviewer's theory is not suitable for More-Lang. If it's a irreconcilable situtation, the initial reviewer should reject in the begining.
 <br>So, either the last review is unreasonable, or the first review is unreasonable, as a whole the review team is untrustworthy & unpredictable.)
 
+The following will explain some details.
+Firt of all, most of the review points are protected by the Wordpress authority, which prevent them from unauthorized visit: 
+https://github.com/clivezhg/more-lang/blob/dfbe046a6136965e1ffa85ecb3ad63079b6eedde/more-lang.php#L82-L85
 
 The following are some key review points:
 
